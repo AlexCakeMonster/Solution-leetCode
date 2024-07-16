@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\RectangleCalculator\bin\Debug\RectangleCalculator.exe.config
+C:\Users\user\source\repos\RectangleCalculator\bin\Debug\RectangleCalculator.exe
+C:\Users\user\source\repos\RectangleCalculator\bin\Debug\RectangleCalculator.pdb
+C:\Users\user\source\repos\RectangleCalculator\obj\Debug\RectangleCalculator.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\RectangleCalculator\obj\Debug\RectangleCalculator.exe
+C:\Users\user\source\repos\RectangleCalculator\obj\Debug\RectangleCalculator.pdb

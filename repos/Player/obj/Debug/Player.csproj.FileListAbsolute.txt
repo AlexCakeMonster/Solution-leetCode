@@ -1,0 +1,7 @@
+C:\Users\user\source\repos\Player\bin\Debug\Player.exe.config
+C:\Users\user\source\repos\Player\bin\Debug\Player.exe
+C:\Users\user\source\repos\Player\bin\Debug\Player.pdb
+C:\Users\user\source\repos\Player\obj\Debug\Player.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Player\obj\Debug\Player.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Player\obj\Debug\Player.exe
+C:\Users\user\source\repos\Player\obj\Debug\Player.pdb

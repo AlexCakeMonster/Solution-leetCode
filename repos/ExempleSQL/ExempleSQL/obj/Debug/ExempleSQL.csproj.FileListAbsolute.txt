@@ -1,0 +1,10 @@
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\bin\Debug\ExempleSQL.exe.config
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\bin\Debug\ExempleSQL.exe
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\bin\Debug\ExempleSQL.pdb
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\obj\Debug\ExempleSQL.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\obj\Debug\ExempleSQL.Properties.Resources.resources
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\obj\Debug\ExempleSQL.csproj.GenerateResource.cache
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\obj\Debug\ExempleSQL.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\obj\Debug\ExempleSQL.exe
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\obj\Debug\ExempleSQL.pdb
+C:\Users\user\source\repos\ExempleSQL\ExempleSQL\obj\Debug\ExempleSQL.LoginForm.resources

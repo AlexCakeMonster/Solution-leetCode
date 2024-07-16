@@ -1,0 +1,16 @@
+C:\Users\user\source\repos\Txt\bin\Debug\net5.0\Txt.exe
+C:\Users\user\source\repos\Txt\bin\Debug\net5.0\Txt.deps.json
+C:\Users\user\source\repos\Txt\bin\Debug\net5.0\Txt.runtimeconfig.json
+C:\Users\user\source\repos\Txt\bin\Debug\net5.0\Txt.runtimeconfig.dev.json
+C:\Users\user\source\repos\Txt\bin\Debug\net5.0\Txt.dll
+C:\Users\user\source\repos\Txt\bin\Debug\net5.0\ref\Txt.dll
+C:\Users\user\source\repos\Txt\bin\Debug\net5.0\Txt.pdb
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.AssemblyInfo.cs
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.dll
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\ref\Txt.dll
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.pdb
+C:\Users\user\source\repos\Txt\obj\Debug\net5.0\Txt.genruntimeconfig.cache

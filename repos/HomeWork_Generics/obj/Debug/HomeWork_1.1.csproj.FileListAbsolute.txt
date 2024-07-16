@@ -1,0 +1,7 @@
+C:\Users\user\source\repos\HomeWork_Generics\bin\Debug\HomeWork_Generics.exe.config
+C:\Users\user\source\repos\HomeWork_Generics\bin\Debug\HomeWork_Generics.exe
+C:\Users\user\source\repos\HomeWork_Generics\bin\Debug\HomeWork_Generics.pdb
+C:\Users\user\source\repos\HomeWork_Generics\obj\Debug\HomeWork_1.1.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\HomeWork_Generics\obj\Debug\HomeWork_1.1.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\HomeWork_Generics\obj\Debug\HomeWork_Generics.exe
+C:\Users\user\source\repos\HomeWork_Generics\obj\Debug\HomeWork_Generics.pdb

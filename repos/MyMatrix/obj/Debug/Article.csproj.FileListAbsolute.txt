@@ -1,0 +1,7 @@
+C:\Users\user\source\repos\MyMatrix\bin\Debug\MyMatrix.exe.config
+C:\Users\user\source\repos\MyMatrix\bin\Debug\MyMatrix.exe
+C:\Users\user\source\repos\MyMatrix\bin\Debug\MyMatrix.pdb
+C:\Users\user\source\repos\MyMatrix\obj\Debug\Article.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\MyMatrix\obj\Debug\Article.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\MyMatrix\obj\Debug\MyMatrix.exe
+C:\Users\user\source\repos\MyMatrix\obj\Debug\MyMatrix.pdb
