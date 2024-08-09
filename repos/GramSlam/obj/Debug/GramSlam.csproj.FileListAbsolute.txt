@@ -1,0 +1,12 @@
+C:\Users\user\source\repos\GramSlam\bin\Debug\GramSlam.exe.config
+C:\Users\user\source\repos\GramSlam\bin\Debug\GramSlam.exe
+C:\Users\user\source\repos\GramSlam\bin\Debug\GramSlam.pdb
+C:\Users\user\source\repos\GramSlam\bin\Debug\EntityFramework.dll
+C:\Users\user\source\repos\GramSlam\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\source\repos\GramSlam\bin\Debug\EntityFramework.xml
+C:\Users\user\source\repos\GramSlam\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user\source\repos\GramSlam\obj\Debug\GramSlam.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\GramSlam\obj\Debug\GramSlam.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\GramSlam\obj\Debug\GramSlam.csproj.CopyComplete
+C:\Users\user\source\repos\GramSlam\obj\Debug\GramSlam.exe
+C:\Users\user\source\repos\GramSlam\obj\Debug\GramSlam.pdb

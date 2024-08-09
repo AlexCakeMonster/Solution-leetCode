@@ -21,7 +21,6 @@ C:\Users\user\source\leetcode\leetcode_012\bin\Debug\net5.0\leetcode_012.runtime
 C:\Users\user\source\leetcode\leetcode_012\bin\Debug\net5.0\leetcode_012.dll
 C:\Users\user\source\leetcode\leetcode_012\bin\Debug\net5.0\ref\leetcode_012.dll
 C:\Users\user\source\leetcode\leetcode_012\bin\Debug\net5.0\leetcode_012.pdb
-C:\Users\user\source\leetcode\leetcode_012\obj\Debug\net5.0\leetcode_012.csproj.AssemblyReference.cache
 C:\Users\user\source\leetcode\leetcode_012\obj\Debug\net5.0\leetcode_012.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\user\source\leetcode\leetcode_012\obj\Debug\net5.0\leetcode_012.AssemblyInfoInputs.cache
 C:\Users\user\source\leetcode\leetcode_012\obj\Debug\net5.0\leetcode_012.AssemblyInfo.cs

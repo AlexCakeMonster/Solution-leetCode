@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\Converter\bin\Debug\Converter.exe.config
-C:\Users\user\source\repos\Converter\bin\Debug\Converter.exe
-C:\Users\user\source\repos\Converter\bin\Debug\Converter.pdb
-C:\Users\user\source\repos\Converter\obj\Debug\Converter.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\Converter\obj\Debug\Converter.csproj.CoreCompileInputs.cache
-C:\Users\user\source\repos\Converter\obj\Debug\Converter.exe
-C:\Users\user\source\repos\Converter\obj\Debug\Converter.pdb

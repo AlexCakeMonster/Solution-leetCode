@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\П\bin\Debug\П.exe.config
-C:\Users\user\source\repos\П\bin\Debug\П.exe
-C:\Users\user\source\repos\П\bin\Debug\П.pdb
-C:\Users\user\source\repos\П\obj\Debug\П.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\П\obj\Debug\П.csproj.CoreCompileInputs.cache
-C:\Users\user\source\repos\П\obj\Debug\П.exe
-C:\Users\user\source\repos\П\obj\Debug\П.pdb

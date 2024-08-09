@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\Arrаy\bin\Debug\Arrаy.exe.config
-C:\Users\user\source\repos\Arrаy\bin\Debug\Arrаy.exe
-C:\Users\user\source\repos\Arrаy\bin\Debug\Arrаy.pdb
-C:\Users\user\source\repos\Arrаy\obj\Debug\Arrаy.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\Arrаy\obj\Debug\Arrаy.csproj.CoreCompileInputs.cache
-C:\Users\user\source\repos\Arrаy\obj\Debug\Arrаy.exe
-C:\Users\user\source\repos\Arrаy\obj\Debug\Arrаy.pdb

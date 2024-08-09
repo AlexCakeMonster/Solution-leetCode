@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище GrandSlamDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Courts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Capacity" Type="int" />
+    <Property Name="Surface" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Matches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TournamentId" Type="int" />
+    <Property Name="Round" Type="varchar" MaxLength="15" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Time" Type="time" Precision="0" />
+    <Property Name="CourtId" Type="int" />
+  </EntityType>
+  <EntityType Name="PlayerInfos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerId" Type="int" />
+    <Property Name="BirthDate" Type="date" />
+    <Property Name="Weight" Type="smallint" />
+    <Property Name="Height" Type="smallint" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="BirthPlace" Type="varchar" MaxLength="50" />
+    <Property Name="Residence" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Players">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="varchar" MaxLength="50" />
+    <Property Name="LName" Type="varchar" MaxLength="50" />
+    <Property Name="Rank" Type="int" />
+  </EntityType>
+  <EntityType Name="PlayerStats">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MatcId" Type="int" />
+    <Property Name="PlayerId" Type="int" />
+    <Property Name="Win" Type="bit" />
+    <Property Name="Aces" Type="smallint" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tournaments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Matches__CourtId__1CF15040">
+    <End Role="Courts" Type="Self.Courts" Multiplicity="0..1" />
+    <End Role="Matches" Type="Self.Matches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courts">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Matches">
+        <PropertyRef Name="CourtId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Matches__Tournam__1B0907CE">
+    <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="0..1" />
+    <End Role="Matches" Type="Self.Matches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tournaments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Matches">
+        <PropertyRef Name="TournamentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlayerInf__Playe__286302EC">
+    <End Role="Players" Type="Self.Players" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PlayerInfos" Type="Self.PlayerInfos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlayerInfos">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlayerSta__MatcI__239E4DCF">
+    <End Role="Matches" Type="Self.Matches" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PlayerStats" Type="Self.PlayerStats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Matches">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlayerStats">
+        <PropertyRef Name="MatcId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PlayerSta__Playe__24927208">
+    <End Role="Players" Type="Self.Players" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PlayerStats" Type="Self.PlayerStats" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Players">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlayerStats">
+        <PropertyRef Name="PlayerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище GrandSlamDBModelContainer">
+    <EntitySet Name="Courts" EntityType="Self.Courts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Matches" EntityType="Self.Matches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayerInfos" EntityType="Self.PlayerInfos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayerStats" EntityType="Self.PlayerStats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tournaments" EntityType="Self.Tournaments" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Matches__CourtId__1CF15040" Association="Self.FK__Matches__CourtId__1CF15040">
+      <End Role="Courts" EntitySet="Courts" />
+      <End Role="Matches" EntitySet="Matches" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Matches__Tournam__1B0907CE" Association="Self.FK__Matches__Tournam__1B0907CE">
+      <End Role="Tournaments" EntitySet="Tournaments" />
+      <End Role="Matches" EntitySet="Matches" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlayerInf__Playe__286302EC" Association="Self.FK__PlayerInf__Playe__286302EC">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="PlayerInfos" EntitySet="PlayerInfos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlayerSta__MatcI__239E4DCF" Association="Self.FK__PlayerSta__MatcI__239E4DCF">
+      <End Role="Matches" EntitySet="Matches" />
+      <End Role="PlayerStats" EntitySet="PlayerStats" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PlayerSta__Playe__24927208" Association="Self.FK__PlayerSta__Playe__24927208">
+      <End Role="Players" EntitySet="Players" />
+      <End Role="PlayerStats" EntitySet="PlayerStats" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\UserInformation\bin\Debug\UserInformation.exe.config
-C:\Users\user\source\repos\UserInformation\bin\Debug\UserInformation.exe
-C:\Users\user\source\repos\UserInformation\bin\Debug\UserInformation.pdb
-C:\Users\user\source\repos\UserInformation\obj\Debug\UserInformation.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\UserInformation\obj\Debug\UserInformation.csproj.CoreCompileInputs.cache
-C:\Users\user\source\repos\UserInformation\obj\Debug\UserInformation.exe
-C:\Users\user\source\repos\UserInformation\obj\Debug\UserInformation.pdb

@@ -15,28 +15,27 @@ namespace Leetcode_001
         static void Main(string[] args)
         {            
             Console.WriteLine(new Solution().IsPalindrome(1234554321));         
-        }
-
-        public class Solution
-        {
-            public bool IsPalindrome(int x)
-            {               
-               
-                int originalNumber = x;
-                int reversedNumber = 0;
-                int firstCharacterOfNmber = 0;
-
-                while (x > 0)
-                {
-                    firstCharacterOfNmber = x % 10;
-                    reversedNumber = reversedNumber * 10 + firstCharacterOfNmber;
-                    x /= 10;
-                }
-               
-                return originalNumber == reversedNumber;
-            }           
-
         }        
         
+    }
+    public class Solution
+    {
+        public bool IsPalindrome(int x)
+        {
+
+            int originalNumber = x;
+            int reversedNumber = 0;
+            int firstCharacterOfNmber = 0;
+
+            while (x > 0)
+            {
+                firstCharacterOfNmber = x % 10;
+                reversedNumber = reversedNumber * 10 + firstCharacterOfNmber;
+                x /= 10;
+            }
+
+            return originalNumber == reversedNumber;
+        }
+
     }
 }

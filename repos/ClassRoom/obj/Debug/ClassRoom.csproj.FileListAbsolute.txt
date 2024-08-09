@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\ClassRoom\bin\Debug\ClassRoom.exe.config
-C:\Users\user\source\repos\ClassRoom\bin\Debug\ClassRoom.exe
-C:\Users\user\source\repos\ClassRoom\bin\Debug\ClassRoom.pdb
-C:\Users\user\source\repos\ClassRoom\obj\Debug\ClassRoom.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\ClassRoom\obj\Debug\ClassRoom.csproj.CoreCompileInputs.cache
-C:\Users\user\source\repos\ClassRoom\obj\Debug\ClassRoom.exe
-C:\Users\user\source\repos\ClassRoom\obj\Debug\ClassRoom.pdb

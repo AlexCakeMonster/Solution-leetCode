@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище GrandSlamDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Courts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Capacity" Type="int" />
+          <Property Name="Surface" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Matches">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TournamentId" Type="int" />
+          <Property Name="Round" Type="varchar" MaxLength="15" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time" Type="time" Precision="0" />
+          <Property Name="CourtId" Type="int" />
+        </EntityType>
+        <EntityType Name="PlayerInfos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerId" Type="int" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="Weight" Type="smallint" />
+          <Property Name="Height" Type="smallint" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="BirthPlace" Type="varchar" MaxLength="50" />
+          <Property Name="Residence" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FName" Type="varchar" MaxLength="50" />
+          <Property Name="LName" Type="varchar" MaxLength="50" />
+          <Property Name="Rank" Type="int" />
+        </EntityType>
+        <EntityType Name="PlayerStats">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MatcId" Type="int" />
+          <Property Name="PlayerId" Type="int" />
+          <Property Name="Win" Type="bit" />
+          <Property Name="Aces" Type="smallint" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tournaments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__Matches__CourtId__1CF15040">
+          <End Role="Courts" Type="Self.Courts" Multiplicity="0..1" />
+          <End Role="Matches" Type="Self.Matches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courts">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="CourtId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matches__Tournam__1B0907CE">
+          <End Role="Tournaments" Type="Self.Tournaments" Multiplicity="0..1" />
+          <End Role="Matches" Type="Self.Matches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournaments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="TournamentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerInf__Playe__286302EC">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlayerInfos" Type="Self.PlayerInfos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayerInfos">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerSta__MatcI__239E4DCF">
+          <End Role="Matches" Type="Self.Matches" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlayerStats" Type="Self.PlayerStats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayerStats">
+              <PropertyRef Name="MatcId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerSta__Playe__24927208">
+          <End Role="Players" Type="Self.Players" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlayerStats" Type="Self.PlayerStats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayerStats">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище GrandSlamDBModelContainer">
+          <EntitySet Name="Courts" EntityType="Self.Courts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Matches" EntityType="Self.Matches" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayerInfos" EntityType="Self.PlayerInfos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayerStats" EntityType="Self.PlayerStats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tournaments" EntityType="Self.Tournaments" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Matches__CourtId__1CF15040" Association="Self.FK__Matches__CourtId__1CF15040">
+            <End Role="Courts" EntitySet="Courts" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matches__Tournam__1B0907CE" Association="Self.FK__Matches__Tournam__1B0907CE">
+            <End Role="Tournaments" EntitySet="Tournaments" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerInf__Playe__286302EC" Association="Self.FK__PlayerInf__Playe__286302EC">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="PlayerInfos" EntitySet="PlayerInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerSta__MatcI__239E4DCF" Association="Self.FK__PlayerSta__MatcI__239E4DCF">
+            <End Role="Matches" EntitySet="Matches" />
+            <End Role="PlayerStats" EntitySet="PlayerStats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerSta__Playe__24927208" Association="Self.FK__PlayerSta__Playe__24927208">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="PlayerStats" EntitySet="PlayerStats" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GrandSlamDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Court">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Capacity" Type="Int32" />
+          <Property Name="Surface" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Matches" Relationship="Self.FK__Matches__CourtId__1CF15040" FromRole="Courts" ToRole="Matches" />
+        </EntityType>
+        <EntityType Name="Match">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TournamentId" Type="Int32" />
+          <Property Name="Round" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="Time" Precision="0" />
+          <Property Name="CourtId" Type="Int32" />
+          <NavigationProperty Name="Court" Relationship="Self.FK__Matches__CourtId__1CF15040" FromRole="Matches" ToRole="Courts" />
+          <NavigationProperty Name="Tournament" Relationship="Self.FK__Matches__Tournam__1B0907CE" FromRole="Matches" ToRole="Tournaments" />
+          <NavigationProperty Name="PlayerStats" Relationship="Self.FK__PlayerSta__MatcI__239E4DCF" FromRole="Matches" ToRole="PlayerStats" />
+        </EntityType>
+        <EntityType Name="PlayerInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerId" Type="Int32" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="Weight" Type="Int16" />
+          <Property Name="Height" Type="Int16" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Residence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Player" Relationship="Self.FK__PlayerInf__Playe__286302EC" FromRole="PlayerInfos" ToRole="Players" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Rank" Type="Int32" />
+          <NavigationProperty Name="PlayerInfos" Relationship="Self.FK__PlayerInf__Playe__286302EC" FromRole="Players" ToRole="PlayerInfos" />
+          <NavigationProperty Name="PlayerStats" Relationship="Self.FK__PlayerSta__Playe__24927208" FromRole="Players" ToRole="PlayerStats" />
+        </EntityType>
+        <EntityType Name="PlayerStat">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MatcId" Type="Int32" />
+          <Property Name="PlayerId" Type="Int32" />
+          <Property Name="Win" Type="Boolean" />
+          <Property Name="Aces" Type="Int16" />
+          <NavigationProperty Name="Match" Relationship="Self.FK__PlayerSta__MatcI__239E4DCF" FromRole="PlayerStats" ToRole="Matches" />
+          <NavigationProperty Name="Player" Relationship="Self.FK__PlayerSta__Playe__24927208" FromRole="PlayerStats" ToRole="Players" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tournament">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Matches" Relationship="Self.FK__Matches__Tournam__1B0907CE" FromRole="Tournaments" ToRole="Matches" />
+        </EntityType>
+        <Association Name="FK__Matches__CourtId__1CF15040">
+          <End Role="Courts" Type="Self.Court" Multiplicity="0..1" />
+          <End Role="Matches" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Courts">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="CourtId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Matches__Tournam__1B0907CE">
+          <End Role="Tournaments" Type="Self.Tournament" Multiplicity="0..1" />
+          <End Role="Matches" Type="Self.Match" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tournaments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Matches">
+              <PropertyRef Name="TournamentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerSta__MatcI__239E4DCF">
+          <End Role="Matches" Type="Self.Match" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlayerStats" Type="Self.PlayerStat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Matches">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayerStats">
+              <PropertyRef Name="MatcId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerInf__Playe__286302EC">
+          <End Role="Players" Type="Self.Player" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlayerInfos" Type="Self.PlayerInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayerInfos">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PlayerSta__Playe__24927208">
+          <End Role="Players" Type="Self.Player" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PlayerStats" Type="Self.PlayerStat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Players">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PlayerStats">
+              <PropertyRef Name="PlayerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GrandSlamDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Courts" EntityType="Self.Court" />
+          <EntitySet Name="Matches" EntityType="Self.Match" />
+          <EntitySet Name="PlayerInfos" EntityType="Self.PlayerInfo" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+          <EntitySet Name="PlayerStats" EntityType="Self.PlayerStat" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Tournaments" EntityType="Self.Tournament" />
+          <AssociationSet Name="FK__Matches__CourtId__1CF15040" Association="Self.FK__Matches__CourtId__1CF15040">
+            <End Role="Courts" EntitySet="Courts" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Matches__Tournam__1B0907CE" Association="Self.FK__Matches__Tournam__1B0907CE">
+            <End Role="Tournaments" EntitySet="Tournaments" />
+            <End Role="Matches" EntitySet="Matches" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerSta__MatcI__239E4DCF" Association="Self.FK__PlayerSta__MatcI__239E4DCF">
+            <End Role="Matches" EntitySet="Matches" />
+            <End Role="PlayerStats" EntitySet="PlayerStats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerInf__Playe__286302EC" Association="Self.FK__PlayerInf__Playe__286302EC">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="PlayerInfos" EntitySet="PlayerInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PlayerSta__Playe__24927208" Association="Self.FK__PlayerSta__Playe__24927208">
+            <End Role="Players" EntitySet="Players" />
+            <End Role="PlayerStats" EntitySet="PlayerStats" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище GrandSlamDBModelContainer" CdmEntityContainer="GrandSlamDBEntities">
+          <EntitySetMapping Name="Courts">
+            <EntityTypeMapping TypeName="GrandSlamDBModel.Court">
+              <MappingFragment StoreEntitySet="Courts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Surface" ColumnName="Surface" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Matches">
+            <EntityTypeMapping TypeName="GrandSlamDBModel.Match">
+              <MappingFragment StoreEntitySet="Matches">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TournamentId" ColumnName="TournamentId" />
+                <ScalarProperty Name="Round" ColumnName="Round" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="CourtId" ColumnName="CourtId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayerInfos">
+            <EntityTypeMapping TypeName="GrandSlamDBModel.PlayerInfo">
+              <MappingFragment StoreEntitySet="PlayerInfos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="Residence" ColumnName="Residence" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="GrandSlamDBModel.Player">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayerStats">
+            <EntityTypeMapping TypeName="GrandSlamDBModel.PlayerStat">
+              <MappingFragment StoreEntitySet="PlayerStats">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MatcId" ColumnName="MatcId" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="Win" ColumnName="Win" />
+                <ScalarProperty Name="Aces" ColumnName="Aces" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="GrandSlamDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tournaments">
+            <EntityTypeMapping TypeName="GrandSlamDBModel.Tournament">
+              <MappingFragment StoreEntitySet="Tournaments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

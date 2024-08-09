@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\Figures\bin\Debug\Figures.exe.config
-C:\Users\user\source\repos\Figures\bin\Debug\Figures.exe
-C:\Users\user\source\repos\Figures\bin\Debug\Figures.pdb
-C:\Users\user\source\repos\Figures\obj\Debug\Figures.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\Figures\obj\Debug\Figures.csproj.CoreCompileInputs.cache
-C:\Users\user\source\repos\Figures\obj\Debug\Figures.exe
-C:\Users\user\source\repos\Figures\obj\Debug\Figures.pdb

@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\Trains\bin\Debug\Trains.exe.config
-C:\Users\user\source\repos\Trains\bin\Debug\Trains.exe
-C:\Users\user\source\repos\Trains\bin\Debug\Trains.pdb
-C:\Users\user\source\repos\Trains\obj\Debug\Trains.csproj.AssemblyReference.cache
-C:\Users\user\source\repos\Trains\obj\Debug\Trains.csproj.CoreCompileInputs.cache
-C:\Users\user\source\repos\Trains\obj\Debug\Trains.exe
-C:\Users\user\source\repos\Trains\obj\Debug\Trains.pdb

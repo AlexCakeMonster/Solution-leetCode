@@ -5,7 +5,6 @@ C:\Users\user\source\leetcode\leetcode_014\bin\Debug\net5.0\leetcode_014.runtime
 C:\Users\user\source\leetcode\leetcode_014\bin\Debug\net5.0\leetcode_014.dll
 C:\Users\user\source\leetcode\leetcode_014\bin\Debug\net5.0\ref\leetcode_014.dll
 C:\Users\user\source\leetcode\leetcode_014\bin\Debug\net5.0\leetcode_014.pdb
-C:\Users\user\source\leetcode\leetcode_014\obj\Debug\net5.0\leetcode_014.csproj.AssemblyReference.cache
 C:\Users\user\source\leetcode\leetcode_014\obj\Debug\net5.0\leetcode_014.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\user\source\leetcode\leetcode_014\obj\Debug\net5.0\leetcode_014.AssemblyInfoInputs.cache
 C:\Users\user\source\leetcode\leetcode_014\obj\Debug\net5.0\leetcode_014.AssemblyInfo.cs
